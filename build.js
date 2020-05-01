@@ -3,32 +3,36 @@ const { exec} = require('child_process');
 const { createInterface } = require('readline');
 
 
-// createInterface variables
-let title = '';
-let port = '';
-let dbName = '';
+const questions = [
+  'HTML <title> innerText? ',
+  'localhost port number? ',
+  'database name? '
+];
 
+const answers = []; // [title, port, dbName]
 
-// interface
+// create interface
 const rl = createInterface({
   input: process.stdin,
-  output: process.stdout,
-  prompt: '> '
+  output: process.stdout
 });
 
-rl.question('HTML <title> innerText? ', (answer) => {
-  title = answer.trim();
-  rl.question('localhost port number? ', (answer) => {
-    port = answer.trim();
-    rl.question('database name? ', (answer) => {
-      dbName = answer.trim();
+// ask questions from questions array
+const ask = (i = 0) => {
+  rl.question(questions[i], answer => {
+    answers.push(answer.trim());
+    if (answers.length !== questions.length) {
+      ask(answers.length);
+    } else {
       rl.close();
       process.stdout.write('\033c'); // clear terminal
       console.log('The innerText, port number, and database name have been applied.');
       makeDirectories();
-    });
+    }
   });
-});
+};
+
+ask();
 
 
 // functions and variables for file content
@@ -56,7 +60,7 @@ import './style.css';
 ReactDOM.render(<App />, document.getElementById('app'));
 `;
 
-const AppJSX =
+const appJSX =
 `import React from 'react';
 
 
@@ -365,6 +369,8 @@ function makeDirectories() {
 const files = [];
 function makeFiles() {
 
+  const [ title, port, dbName ] = answers;
+
   Promise.all(directories)
     .then(() => {
       files.push(
@@ -375,7 +381,7 @@ function makeFiles() {
         // source
         writeFile('./client/src/style.css', '').catch(err => console.log(err)),
         writeFile('./client/src/index.jsx', indexJSX).catch(err => console.log(err)),
-        writeFile('./client/src/components/App.jsx', AppJSX).catch(err => console.log(err)),
+        writeFile('./client/src/components/App.jsx', appJSX).catch(err => console.log(err)),
 
         // backend
         // server
@@ -410,24 +416,24 @@ function buildComplete() {
   Promise.all(files)
     .then(() => {
       console.log('Build complete! 👍');
-      openFiles();
+      openFiles(answers[1]);
     })
     .catch(err => console.log(err));
 }
 
 
 // open files and browser
-function openFiles() {
+function openFiles(port) {
   const package = 'package.json';
-  const AppJSX = 'client/src/components/App.jsx';
+  const appJSX = 'client/src/components/App.jsx';
   const server = 'backend/server/index.js';
   const docRouter = 'backend/doc/docRouter.js';
   const crud = 'backend/database/crud.js';
   const docModel = 'backend/doc/docModel.js';
 
   // open files
-  exec(`code ${package} ${AppJSX} ${server} ${docRouter} ${crud} ${docModel}`);
+  exec(`code ${package} ${appJSX} ${server} ${docRouter} ${crud} ${docModel}`);
   // open browser
-  exec( `open http://localhost:${Number(port)}` );
+  exec( `open http://localhost:${port}` );
   console.log('Refresh your browser after nodemon starts.');
 }
