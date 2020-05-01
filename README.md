@@ -1,7 +1,7 @@
 # **MERN Stack Build Template**
 
 * Make a copy of the root folder and open in Visual Studio Code
-* Press `cmd/ctl + shift + B` to display the build task in the Command Palette
+* Press `cmd/ctrl + shift + B` to display the build task in the Command Palette
 * Press enter to select and start the build task
 
 Answer three questions in the terminal, and in seconds you'll have a MERN stack 👍
@@ -29,7 +29,7 @@ Answer three questions in the terminal, and in seconds you'll have a MERN stack 
 2. Ensure you have the `code` shell command enabled:
     * In Visual Studio Code's Command Palette, search for and click "Shell Command: Install 'code' command in PATH"
 
-3. Press `cmd/ctl + shift + B` to display the build task in the Command Palette, and press enter to select and start the build task.
+3. Press `cmd/ctrl + shift + B` to display the build task in the Command Palette, and press enter to select and start the build task.
 
 4. Finally, complete the terminal prompts for the following:
     * HTML `<title>` innerText
