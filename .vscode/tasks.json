@@ -1,0 +1,179 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "dependsOn": ["deleteREADME", "promptAndBuildFileStructure", "npmInstall", "gitInit", "deleteFiles", "add", "commitDeletion", "buildBackend", "watch"],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "watch",
+      "dependsOn": ["watchFrontend", "watchBackend", "startDev"]
+    },
+    {
+      "label": "deleteREADME",
+      "type": "shell",
+      "command": "rm README.md",
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    },
+    {
+      "label": "promptAndBuildFileStructure",
+      "type": "shell",
+      "command": "node build.js",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "npmInstall",
+      "type": "shell",
+      "command": "npm install",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "gitInit",
+      "dependsOn": ["init", "add", "commitInit"],
+      "dependsOrder": "sequence",
+    },
+    {
+      "label": "init",
+      "type": "shell",
+      "command": "git init",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "add",
+      "type": "shell",
+      "command": "git add -A",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "commitInit",
+      "type": "shell",
+      "command": "git commit -m 'git init'",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "deleteFiles",
+      "type": "shell",
+      "command": "node deleteFiles.js",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "commitDeletion",
+      "type": "shell",
+      "command": "git commit -m 'deleted starter files'",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "buildBackend",
+      "type": "npm",
+      "script": "buildBackend",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "watchFrontend",
+      "type": "npm",
+      "script": "watchFrontend",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": false,
+        "group": "MERN"
+      }
+    },
+    {
+      "label": "watchBackend",
+      "type": "npm",
+      "script": "watchBackend",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": false,
+        "group": "MERN"
+      }
+    },
+    {
+      "label": "startDev",
+      "type": "npm",
+      "script": "startDev",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": false,
+        "group": "MERN"
+      }
+    }
+  ]
+}
