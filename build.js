@@ -349,15 +349,15 @@ const directories = [];
 function makeDirectories() {
   directories.push(
     mkdir('./client')
-      .then(() => mkdir('./client/public', { recursive: true }))
-      .then(() => mkdir('./client/src', { recursive: true }))
-      .then(() => mkdir('./client/src/components', { recursive: true }))
+      .then(() => mkdir('./client/public').catch(err => console.log(err)))
+      .then(() => mkdir('./client/src').catch(err => console.log(err)))
+      .then(() => mkdir('./client/src/components').catch(err => console.log(err)))
       .catch(err => console.log(err)),
 
     mkdir('./backend')
-      .then(() => mkdir('./backend/server', { recursive: true }))
-      .then(() => mkdir('./backend/database', { recursive: true }))
-      .then(() => mkdir('./backend/doc', { recursive: true }))
+      .then(() => mkdir('./backend/server').catch(err => console.log(err)))
+      .then(() => mkdir('./backend/database').catch(err => console.log(err)))
+      .then(() => mkdir('./backend/doc').catch(err => console.log(err)))
       .catch( err => console.log(err))
   );
 
