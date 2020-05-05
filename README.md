@@ -1,5 +1,7 @@
 # **MERN Stack Build Template**
 
+[Video demonstration](https://youtu.be/5m8hULL9mSI)
+
 * Make a copy of the root folder and open in Visual Studio Code
 * Press `cmd/ctrl + shift + B` to display the build task in the Command Palette
 * Press enter to select and start the build task
