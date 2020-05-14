@@ -349,16 +349,16 @@ const directories = [];
 function makeDirectories() {
   directories.push(
     mkdir('./client')
-      .then(() => mkdir('./client/public').catch(err => console.log(err)))
-      .then(() => mkdir('./client/src').catch(err => console.log(err)))
-      .then(() => mkdir('./client/src/components').catch(err => console.log(err)))
-      .catch(err => console.log(err)),
+      .then(() => mkdir('./client/public').catch(console.log))
+      .then(() => mkdir('./client/src').catch(console.log))
+      .then(() => mkdir('./client/src/components').catch(console.log))
+      .catch(console.log),
 
     mkdir('./backend')
-      .then(() => mkdir('./backend/server').catch(err => console.log(err)))
-      .then(() => mkdir('./backend/database').catch(err => console.log(err)))
-      .then(() => mkdir('./backend/doc').catch(err => console.log(err)))
-      .catch( err => console.log(err))
+      .then(() => mkdir('./backend/server').catch(console.log))
+      .then(() => mkdir('./backend/database').catch(console.log))
+      .then(() => mkdir('./backend/doc').catch(console.log))
+      .catch(console.log)
   );
 
   makeFiles();
@@ -377,35 +377,35 @@ function makeFiles() {
 
         // frontend
         // public
-        writeFile('./client/public/index.html', html(title)).catch(err => console.log(err)),
+        writeFile('./client/public/index.html', html(title)).catch(console.log),
         // source
-        writeFile('./client/src/style.css', '').catch(err => console.log(err)),
-        writeFile('./client/src/index.jsx', indexJSX).catch(err => console.log(err)),
-        writeFile('./client/src/components/App.jsx', appJSX).catch(err => console.log(err)),
+        writeFile('./client/src/style.css', '').catch(console.log),
+        writeFile('./client/src/index.jsx', indexJSX).catch(console.log),
+        writeFile('./client/src/components/App.jsx', appJSX).catch(console.log),
 
         // backend
         // server
-        writeFile('./backend/server/index.js', server(port)).catch(err => console.log(err)),
+        writeFile('./backend/server/index.js', server(port)).catch(console.log),
         // database
-        writeFile('./backend/database/crud.js', crud).catch(err => console.log(err)),
-        writeFile('./backend/database/index.js', dbIndex(dbName)).catch(err => console.log(err)),
-        writeFile('./backend/database/seeder.js', '').catch(err => console.log(err)),
-        writeFile('./backend/database/URI.js', URI(dbName)).catch(err => console.log(err)),
-        writeFile('./backend/database/utils.js', '').catch(err => console.log(err)),
+        writeFile('./backend/database/crud.js', crud).catch(console.log),
+        writeFile('./backend/database/index.js', dbIndex(dbName)).catch(console.log),
+        writeFile('./backend/database/seeder.js', '').catch(console.log),
+        writeFile('./backend/database/URI.js', URI(dbName)).catch(console.log),
+        writeFile('./backend/database/utils.js', '').catch(console.log),
         // database document
-        writeFile('./backend/doc/docRouter.js', docRouter).catch(err => console.log(err)),
-        writeFile('./backend/doc/docController.js', docController).catch(err => console.log(err)),
-        writeFile('./backend/doc/docModel.js', docModel).catch(err => console.log(err)),
+        writeFile('./backend/doc/docRouter.js', docRouter).catch(console.log),
+        writeFile('./backend/doc/docController.js', docController).catch(console.log),
+        writeFile('./backend/doc/docModel.js', docModel).catch(console.log),
         // miscellaneous
-        writeFile('./.babelrc', babelrc).catch(err => console.log(err)),
-        writeFile('./.gitignore', gitignore).catch(err => console.log(err)),
-        writeFile('./README.md', '').catch(err => console.log(err)),
-        writeFile('./TODO', '').catch(err => console.log(err)),
-        writeFile('./webpack.config.js', webpack).catch(err => console.log(err)),
-        writeFile('./package.json', package).catch(err => console.log(err))
+        writeFile('./.babelrc', babelrc).catch(console.log),
+        writeFile('./.gitignore', gitignore).catch(console.log),
+        writeFile('./README.md', '').catch(console.log),
+        writeFile('./TODO', '').catch(console.log),
+        writeFile('./webpack.config.js', webpack).catch(console.log),
+        writeFile('./package.json', package).catch(console.log)
       );
     })
-    .catch(err => console.log(err));
+    .catch(console.log);
 
   buildComplete();
 }
@@ -418,7 +418,7 @@ function buildComplete() {
       console.log('Build complete! 👍');
       openFiles(answers[1]);
     })
-    .catch(err => console.log(err));
+    .catch(console.log);
 }
 
 
