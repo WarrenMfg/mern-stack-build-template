@@ -1,5 +1,5 @@
 const { writeFile, mkdir } = require('fs').promises;
-const { exec} = require('child_process');
+const { exec } = require('child_process');
 const { createInterface } = require('readline');
 
 
@@ -304,7 +304,7 @@ const package =
   "homepage": "https://github.com/WarrenMfg",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/WarrenMfg/mern-stack-build-template"
   },
   "main": "backend/server/index.js",
   "scripts": {
