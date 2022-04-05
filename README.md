@@ -159,7 +159,7 @@ For your project needs:
 # **Author**
 
 * **Kent Warren** - [GitHub](https://github.com/WarrenMfg)
-* **The Art of Warren** - [Portfolio](https://theartofwarren.com/)
+* **Portfolio** - [Portfolio](https://kent-warren.bss.design/)
 * **LinkedIn** - [Profile](https://www.linkedin.com/in/theartofwarren/)
 
 ## Acknowledgments
