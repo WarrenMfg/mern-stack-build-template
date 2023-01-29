@@ -158,9 +158,9 @@ For your project needs:
 
 # **Author**
 
-* **GitHub** - [GitHub](https://github.com/WarrenMfg)
-* **Resume** - [Portfolio](https://www.kentwarren.dev)
-* **LinkedIn** - [Profile](https://www.linkedin.com/in/theartofwarren/)
+* [GitHub](https://github.com/WarrenMfg)
+* [Resume](https://www.kentwarren.dev)
+* [LinkedIn](https://www.linkedin.com/in/theartofwarren/)
 
 ## Acknowledgments
 * **Scott Moss** - [GitHub](https://github.com/Hendrixer) - For the backend workflow concepts taught on [Frontend Masters](https://frontendmasters.com/)
