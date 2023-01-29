@@ -158,8 +158,8 @@ For your project needs:
 
 # **Author**
 
-* **Kent Warren** - [GitHub](https://github.com/WarrenMfg)
-* **Portfolio** - [Portfolio](https://kent-warren.bss.design/)
+* **GitHub** - [GitHub](https://github.com/WarrenMfg)
+* **Resume** - [Portfolio](https://www.kentwarren.dev)
 * **LinkedIn** - [Profile](https://www.linkedin.com/in/theartofwarren/)
 
 ## Acknowledgments
